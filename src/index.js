@@ -1,5 +1,18 @@
+//Electron
 const { app, BrowserWindow} = require('electron');
 
+//Discord
+const Discord = require('discord.js');
+const client = new Discord.Client();    //Create the interface between 'this' and discord.
+
+//Config file
+const config = require('../config.json');
+
+/**
+ * ElectronJS functions
+ * 
+ * 
+ */
 let win; //Hold the window from electron
 
 let windowOptions = {
@@ -31,3 +44,16 @@ app.on('window-all-closed', () => {
         createWindow();
     }
 });
+
+
+/**
+ * Discord.JS functions
+ * 
+ * 
+ */
+
+client.on('ready',()=>{
+    console.log(`Bot up and running!`);
+});
+
+client.login(config.token);
