@@ -1,0 +1,39 @@
+:root{
+    --navHeight: 24px;
+}
+
+.navbar{
+    -webkit-app-region: drag;
+    position: fixed;
+    width: 100%;
+    height: var(--navHeight);
+    background-color: #333;
+    float:right;
+}
+
+.navbtn{
+    transition: 0.2s ease-in;
+    -webkit-app-region: no-drag;
+    float:right;
+    width: calc(var(--navHeight) + 18px);
+    height: var(--navHeight);
+    color:#ccc;
+    font-size: 16px;    /*Magic number*/
+}
+
+.navbtn i{
+    margin-left: 14px;  /*Magic number*/
+    margin-top: 3px;    /*Magic number*/
+}
+
+.navbtn:hover{
+    cursor: pointer;
+}
+
+.close:hover{
+    background-color: crimson;
+}
+
+.min:hover{
+    background-color: #232323;
+}

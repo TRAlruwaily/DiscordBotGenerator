@@ -16,8 +16,10 @@ const config = require('../config.json');
 let win; //Hold the window from electron
 
 let windowOptions = {
-    width: 800,
-    height: 600,
+    width: 1000,
+    height: 750,
+    frame: false,
+    resizable :false,
     webPreferences: {
         nodeIntegration: true
     }
@@ -26,6 +28,9 @@ let windowOptions = {
 function createWindow(){
     win = new BrowserWindow(windowOptions);
     win.loadFile('./public/index.html');
+
+    //win.webContents.toggleDevTools();     //Show the devtools panel
+
     win.on('closed', ()=>{
         win = null;
     })
