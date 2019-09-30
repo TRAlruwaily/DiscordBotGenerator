@@ -1,32 +1,39 @@
 :root{
-    --navHeight: 24px;
+    --menuHeight: 24px;
+    --navWidth: 38px;
+    --appHeight: 750px;
 }
 
-.navbar{
+body{
+    overflow: hidden;
+    background-color: #325785;
+}
+
+.menubar{
     -webkit-app-region: drag;
     position: fixed;
     width: 100%;
-    height: var(--navHeight);
+    height: var(--menuHeight);
     background-color: #333;
     float:right;
 }
 
-.navbtn{
-    transition: 0.2s ease-in;
+.menubtn{
+    transition: 0.12s ease-in;
     -webkit-app-region: no-drag;
     float:right;
-    width: calc(var(--navHeight) + 18px);
-    height: var(--navHeight);
+    width: calc(var(--menuHeight) + 18px);
+    height: var(--menuHeight);
     color:#ccc;
     font-size: 16px;    /*Magic number*/
 }
 
-.navbtn i{
+.menubtn i{
     margin-left: 14px;  /*Magic number*/
     margin-top: 3px;    /*Magic number*/
 }
 
-.navbtn:hover{
+.menubtn:hover{
     cursor: pointer;
 }
 
@@ -36,4 +43,50 @@
 
 .min:hover{
     background-color: #232323;
+}
+
+.navbar{
+    background-color:#333;
+    position: fixed;
+    width: var(--navWidth);
+    height: calc(100% - var(--menuHeight));
+    margin-top: var(--menuHeight);
+}
+
+.navbar div{
+    transition: 0.12s ease-in;
+    width: var(--navWidth);
+    height: var(--navWidth);
+    font-size: 28px;
+}
+
+.navbar div i{
+    margin-left: 6px;
+    margin-top: 4px;
+    color: #ccc;
+}
+
+.navbar div:hover{
+    cursor: pointer;
+    background-color: #555;
+}
+
+.content{
+    z-index: -5;
+    position: absolute;
+    width: calc(100% - var(--navWidth));
+    height:100%;
+    margin-left: var(--navWidth);
+    margin-top: var(--menuHeight);
+}
+
+.page{
+    position: relative;
+    display: block;
+    height: calc(100% - calc(var(--menuHeight) * 2));
+    width: calc(100% - var(--navWidth));
+    margin-top: calc(var(--menuHeight) / 2);
+    margin-left: calc(var(--navWidth) / 2);
+    margin-bottom: calc(var(--menuHeight) / 2);
+    background-color:#a502d8;
 }
